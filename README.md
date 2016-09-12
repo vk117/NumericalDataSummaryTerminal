@@ -17,6 +17,10 @@ Important
 
 - If you run the "file" command and you cannot find the file dialog window, minimize your terminal. It should be underneath.
 
+- The list of numbers in the text files that you select can be punctuated with spaces or commas. However, if you choose to add commas, make sure that there are spaces between the commas and numbers (e.g. 5 , 2 , 8 , 1). If not, the program will not read numbers with commas attached. 
+
+- The "null.txt" file is an empty file that is necessary for the program to function properly. It was not added by mistake. 
+
 Future Plans
 ------------
 
