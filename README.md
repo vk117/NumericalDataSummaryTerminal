@@ -24,6 +24,6 @@ Important
 Future Plans
 ------------
 
-- A GUI so that the program does not have to be run on your computer's console.
+- GUI
 
 - Graph support, namely histograms and box plots.
