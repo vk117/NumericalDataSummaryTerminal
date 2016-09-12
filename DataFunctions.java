@@ -3,7 +3,7 @@ import java.util.Arrays;
 
 /**
  * Numerical Data Summary Terminal - Data Functions
- * <p>
+ * 
  * This program contains methods which are all the valid
  * commands that a user can enter into the terminal.
  *
