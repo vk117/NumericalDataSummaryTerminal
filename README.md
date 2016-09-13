@@ -1,5 +1,5 @@
 # Numerical Data Summary Terminal
-
+<img src="NumericalDataSummaryTerminal_Screenshot.jpg" />
 How to Run the Program
 --------------------------
 
