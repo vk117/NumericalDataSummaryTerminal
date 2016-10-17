@@ -6,14 +6,19 @@ How to Run the Program
 - WINDOWS USERS
 
   1) Download the jar file and the bat file.
+  
   2) Place them both in a folder.
+  
   3) Double click on the bat file.
   
 - MAC and LINUX USERS
 
   1) Download the jar file.
+  
   2) Place it in a folder.
+  
   3) Navigate to the folder using your terminal.
+  
   4) Type the command java -jar NumericalDataSummaryTerminal.jar
 
 Important
