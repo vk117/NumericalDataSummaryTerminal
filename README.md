@@ -23,6 +23,10 @@ How to Run the Program
 
 Important
 ----------
+- The file you input should be a text file that contains numbers listed out.
+
+- The program is designed for univariate data sets, so all of the numbers in your inputted text file are considered part of the same variable of the dataset.
+
 - If you start the program with a terminal or command prompt window that is not full screen, the title text gets jumbled. This does not affect the performance of the program, it simply makes the title text look bad.
 
 - If you run the "file" command and you cannot find the file dialog window, minimize your terminal and other windows. It should be underneath.
