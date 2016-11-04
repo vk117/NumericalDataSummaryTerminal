@@ -1,5 +1,5 @@
 # Numerical Data Summary Terminal
-<img src="NumericalDataSummaryTerminal_Screenshot2.jpg" />
+<img src="NumericalDataSummaryTerminal_Screenshot3.jpg" />
 How to Run the Program
 --------------------------
 
@@ -19,7 +19,9 @@ How to Run the Program
   
   3) Navigate to the folder using your terminal.
   
-  4) Type the command java -jar NumericalDataSummaryTerminal.jar
+  4) Type "chmod +x Run_NumericalDataSummaryTerminal.command" (ONLY DO THIS THE FIRST TIME YOU DOWNLOAD)
+  
+  5) Double click the command file
 
 Important
 ----------
@@ -37,7 +39,4 @@ Important
 
 Future Plans
 ------------
-
-- Make running the program easier for Mac and Linux users
-
 - Graph support, namely histograms and box plots.
