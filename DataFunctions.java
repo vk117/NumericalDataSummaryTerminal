@@ -8,16 +8,16 @@ import java.util.Arrays;
  * commands that a user can enter into the terminal.
  *
  * @author Vikram Pasumarti, vpasuma@purdue.edu
- * @version 17 October 2016
+ * @version 4 November 2016
  */
-public class DataFunctions {
+class DataFunctions {
 
     /**
      * The dataset is inputted as an array of doubles. The method
      * calculates and returns the mean, also known as the average, of
      * the dataset.
      */
-    public double mean(double array[]) {
+    double mean(double[] array) {
         double sum = 0;
         double average = 0;
         for (int i = 0; i < array.length; i++) {
@@ -33,7 +33,7 @@ public class DataFunctions {
      * the number of values in the dataset are odd or even, the method
      * uses a different technique to calculate the median.
      */
-    public double median(double array[]) {
+    double median(double[] array) {
         Arrays.sort(array);
         int index = 0;
         if (array.length % 2.0 != 0.0) {
@@ -43,8 +43,8 @@ public class DataFunctions {
             int index2 = 0;
             index2 = (array.length / 2);
             index = index2 - 1;
-            double evenMedian = (array[index] + array[index2]) / 2;
-            return evenMedian;
+            return (array[index] + array[index2]) / 2;
+
         }
     }
 
@@ -57,7 +57,7 @@ public class DataFunctions {
      * values occur the same number of times, the method will return
      * an empty Array List.
      */
-    public ArrayList mode(double array[]) {
+    ArrayList mode(double[] array) {
         ArrayList<Double> dataValues = new ArrayList<>();
         ArrayList<Double> results = new ArrayList<>();
         for(int i = 0; i < array.length; i++) {
@@ -95,7 +95,7 @@ public class DataFunctions {
      * of the mean and median to see which is greater, or if they
      * are equal.
      */
-    public String skew(double meanVal, double medianVal) {
+    String skew(double meanVal, double medianVal) {
 
         if (meanVal == medianVal) {
             return "Symmetrical";
@@ -113,7 +113,7 @@ public class DataFunctions {
      * calculates and returns the standard deviation of the dataset.
      * The standard deviation shows how close the data is to the mean.
      */
-    public double stdDev(double array[]) {
+    double stdDev(double[] array) {
         double sum = 0.0;
         double variance = 0.0;
         double meanVal = mean(array);
@@ -129,7 +129,7 @@ public class DataFunctions {
      * calculates and returns the range, which is simply the difference
      * between the maximum value and minimum value of the dataset.
      */
-    public double range(double array[]) {
+    double range(double[] array) {
         return max(array) - min(array);
     }
 
@@ -141,14 +141,15 @@ public class DataFunctions {
      * an integer or not, because the technique to determine the first
      * quartile differs based on this fact.
      */
-    public double Q1(double array[]) {
+    double Q1(double[] array) {
         Arrays.sort(array);
-        int d1 = array.length / 4;
-        String integerCheck = Double.toString(d1);
-        if (integerCheck.contains(".0")) {
-            return array[d1];
-        } else {
-            return (array[d1] + array[d1 + 1]) / 2;
+        double d1 = array.length / 4.0;
+        double integerCheck = d1 % 1;
+        if (integerCheck != 0.0) {
+            return array[(int) Math.ceil(d1) - 1];
+        }
+        else {
+            return ((array[(int)d1 - 1] + array[(int)d1]) / 2);
         }
     }
 
@@ -160,14 +161,14 @@ public class DataFunctions {
      * an integer or not, because the technique to determine the third
      * quartile differs based on this fact.
      */
-    public double Q3(double array[]) {
+    double Q3(double[] array) {
         Arrays.sort(array);
-        int d3 = (3 * array.length) / 4;
-        String integerCheck = Double.toString(d3);
-        if (integerCheck.contains(".0")) {
-            return array[d3];
+        double d3 = (3*array.length) / 4.0;
+        double integerCheck = d3 % 1;
+        if (integerCheck != 0.0) {
+            return array[(int) Math.ceil(d3) - 1];
         } else {
-            return (array[d3] + array[d3 + 1]) / 2;
+            return ((array[(int)d3 - 1] + array[(int)d3]) / 2);
         }
     }
 
@@ -176,7 +177,7 @@ public class DataFunctions {
      * calculates and returns the interquartile range which is simply
      * the difference between the first and third quartiles.
      */
-    public double iqr(double array[]) {
+    double iqr(double[] array) {
         double Q1val = Q1(array);
         double Q3val = Q3(array);
         return Q3val - Q1val;
@@ -188,7 +189,7 @@ public class DataFunctions {
      * is the all of the information needed to draw a box plot, the minimum,
      * maximum, first quartile, median, and third quartile.
      */
-    public String fiveNumSummary(double array[]) {
+    String fiveNumSummary(double[] array) {
         double max = max(array);
         double min = min(array);
         double Q1val = Q1(array);
@@ -204,7 +205,7 @@ public class DataFunctions {
      * to determine at what intervals would mild or extreme outliers
      * exist.
      */
-    public String outliers(double array[]) {
+    String outliers(double[] array) {
         double Q1val = Q1(array);
         double Q3val = Q3(array);
         double iqrVal = iqr(array);
@@ -223,7 +224,7 @@ public class DataFunctions {
      * as well as what kind of outlier it is. If no outliers exist, the
      * method returns "None".
      */
-    public String listOutliers(double array[]) {
+    String listOutliers(double[] array) {
         String mildLower = "";
         String mildHigher = "";
         String extremeLower = "";
@@ -269,7 +270,7 @@ public class DataFunctions {
      * The dataset is inputted as an array of doubles. This method
      * returns the dataset itself.
      */
-    public String listDataset(double array[]) {
+    String listDataset(double[] array) {
         String dataset = "";
         for (int i = 0; i < array.length; i++) {
             dataset = dataset + " " + array[i];
@@ -281,7 +282,7 @@ public class DataFunctions {
      * The dataset is inputted as an array of doubles. The method
      * calculates and returns the maximum value of the dataset.
      */
-    public double max(double array[]) {
+    double max(double[] array) {
         double max = array[0];
         for (int i = 0; i < array.length; i++) {
             if (array[i] > max) {
@@ -296,7 +297,7 @@ public class DataFunctions {
      * The dataset is inputted as an array of doubles. The method
      * calculates and returns the minimum value of the dataset.
      */
-    public double min(double array[]) {
+    double min(double[] array) {
         double min = array[0];
         for (int i = 0; i < array.length; i++) {
             if (array[i] < min) {
@@ -311,7 +312,7 @@ public class DataFunctions {
      * The dataset is inputted as an array of doubles. The method
      * calculates and returns a sorted version of the dataset.
      */
-    public String datasetSort(double array[]) {
+    String datasetSort(double[] array) {
         Arrays.sort(array);
         String dataset = "";
         for (int i = 0; i < array.length; i++) {
