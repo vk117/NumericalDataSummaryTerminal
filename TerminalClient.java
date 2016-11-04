@@ -19,7 +19,7 @@ import java.util.Scanner;
  * user to enter commands and then executes the users input.
  *
  * @author Vikram Pasumarti, vpasuma@purdue.edu
- * @version 17 October 2016
+ * @version 4 November 2016
  */
 public class TerminalClient {
 
@@ -76,7 +76,7 @@ public class TerminalClient {
         if (!fileExists) {
             System.out.println("\nNo file loaded\n");
             return "Bad file";
-        } else if (array.length == 0) {
+        } else if (array.length <= 1) {
             System.out.println("File invalid. Please check file for errors or load new file");
             return "Bad file";
         } else {
@@ -107,7 +107,7 @@ public class TerminalClient {
                 "                                                             |___/                                                             \n" +
                 "\n");
         System.out.println("@author Vikram Pasumarti");
-        System.out.println("@version 17 October 2016");
+        System.out.println("@version 4 November 2016");
         System.out.println("---------------------------");
         System.out.println("Please select a file, then enter a command. If you need help, type 'help'");
 
@@ -238,7 +238,7 @@ public class TerminalClient {
                     }
                     System.out.println("Five Number Summary for " + fileName + " " + d.fiveNumSummary(tc.dataArray) + "\n");
                     break;
-                case "outliers":
+                case "outlierfences":
                     check = tc.fileCheck(tc.fileExists, tc.dataArray);
                     if (check.equals("\nBad file")) {
                         break;
@@ -339,7 +339,7 @@ public class TerminalClient {
                         pw.write("Five Number Summary for " + fileName + ": " + d.fiveNumSummary(tc.dataArray));
                         pw.println();
                         pw.println();
-                        pw.write("Outlier Conditions for " + fileName + ": \n " + d.outliers(tc.dataArray));
+                        pw.write("Outlier Fences for " + fileName + ": \n " + d.outliers(tc.dataArray));
                         pw.println();
                         pw.println();
                         pw.write("List of Outliers for " + fileName + " \n" + d.listOutliers(tc.dataArray));
@@ -370,7 +370,7 @@ public class TerminalClient {
                     System.out.println("Q3: Returns the Third Quartile of the data");
                     System.out.println("iqr: Returns the Interquartile Range of the data");
                     System.out.println("fivenumsum: Returns the Five Number Summary of the data");
-                    System.out.println("outliers: Returns a summary of the outliers based on inner and outer fences");
+                    System.out.println("outlierfences: Returns a summary of the outliers based on inner and outer fences");
                     System.out.println("listoutliers: Returns a list of all outliers in the file");
                     System.out.println("print: Writes a full numerical data summary to a text file");
                     System.out.println("help: Returns a list of commands");
@@ -390,6 +390,4 @@ public class TerminalClient {
 
 
 }
-
-
 
